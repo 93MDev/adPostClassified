@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { BannersComponent } from './banners/banners.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
+import {BackendApiService} from './backend-api.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: UserProfileComponent },
@@ -25,6 +29,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    HttpModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

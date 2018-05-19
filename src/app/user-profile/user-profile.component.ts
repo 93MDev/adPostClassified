@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import {  Config } from '../config';
+
+import {BackendApiService} from '../backend-api.service';
+
 @Component({	
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -18,14 +22,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 	clickMessage = '';
-	constructor() { }
+	constructor(private _backendService:BackendApiService) { }
 
 	ngOnInit() {
 
 	}
 	onClickMe(){
-		this.clickMessage = "Not yet Implemented";
-		alert(this.clickMessage);
+		/*this.clickMessage = "Not yet Implemented";
+		alert(Config.getHostUrl()+'    '+this.clickMessage)*/;
+
+    /*this._backendService.getWelcomeMessage().then(
+        d=>{
+          //this.clickMessage = d;
+        }
+      );*/
 		return false;
 	}
 
